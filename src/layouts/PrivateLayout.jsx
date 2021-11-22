@@ -1,10 +1,11 @@
 import React from 'react';
 
-const PrivateLayout = () => {  
+const PrivateLayout = ( {children}) => {  
 
     return (
         <div>
         Layout privaado!!
+        { children }
         </div>
 
 
