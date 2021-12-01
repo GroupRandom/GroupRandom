@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const Navbar = () => {
+  const { loginWithRedirect } = useAuth0();
+
+  
     return (
         <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
   <div class="flex items-center flex-shrink-0 text-black mr-6">
@@ -21,11 +26,11 @@ const Navbar = () => {
       <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200  mr-4">
         Productos
       </a>
-      <Link to = '/login'>
-          <button  className="inline-block text-sm px-4 py-2 leading-none border rounded text-black hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
+
+          <button onClick={() => loginWithRedirect()}  className="inline-block text-sm px-4 py-2 leading-none border rounded text-black hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
             Iniciar sesion
           </button>
-      </Link>
+
     </div>
   </div>
 </nav>

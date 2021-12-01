@@ -8,10 +8,16 @@ import Categorias from './pages/admin/Categorias';
 import Articulos from './pages/admin/Articulos';
 import PublicLayout from './layouts/PublicLayout';
 import PrivateLayout from './layouts/PrivateLayout';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 
 function App() {
   return (
+    <Auth0Provider
+    domain="dev-1f2c0x5x.us.auth0.com"
+    clientId="R5BL629VD6ih7kwF5p5ed7tQK8wCo8fm"
+    redirectUri={window.location.origin}
+    >
      <Router>
        <Switch>
          <Route path= '/login'>
@@ -55,6 +61,7 @@ function App() {
 
        </Switch>
      </Router>
+    </Auth0Provider>
   );
 }
 
